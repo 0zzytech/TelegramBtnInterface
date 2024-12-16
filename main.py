@@ -12,7 +12,7 @@ bot = telebot.TeleBot('8058602209:AAFgcu6bXsWB5xsaFTHMVHDV1LVu06xOxnQ')
 @bot.message_handler(commands=['start'])
 def menu(message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    australia = types.KeyboardButton("Австралия")
+    australia = types.KeyboardButton("Австралия", web_app=webAppT)
     africa = types.KeyboardButton("Африка")
     evrasia = types.KeyboardButton("Евразия")
     namerika = types.KeyboardButton("Северная Америка")
