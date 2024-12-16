@@ -1,10 +1,12 @@
 import sqlite3
 import telebot
 from telebot import types
+import json
 
 conn=sqlite3.connect("C:/BD/tg.db", check_same_thread=False)
 cur = conn.cursor()
 
+webAppT = types.WebAppInfo("https://0zzytech.github.io/TelegramBtnInterface/")
 bot = telebot.TeleBot('8058602209:AAFgcu6bXsWB5xsaFTHMVHDV1LVu06xOxnQ')
 
 @bot.message_handler(commands=['start'])
