@@ -19,8 +19,8 @@ btn1.addEventListener("click", function () {
     }
     else {
         tg.MainButton.setText("Вывести страны Австралии");
-    item = "1";
-    tg.MainButton.show();
+        item = "Австралия";
+        tg.MainButton.show();
     }
 });
 
@@ -30,7 +30,7 @@ btn2.addEventListener("click", function () {
     }
     else {
         tg.MainButton.setText("Вывести страны Африки");
-        item = "2";
+        item = "Алжир, Гвинея, Египет, Зимбабве, Южный Судан";
         tg.MainButton.show();
 }
 });
@@ -41,7 +41,7 @@ btn3.addEventListener("click", function () {
     }
     else {
         tg.MainButton.setText("Вывести страны Евразии");
-        item = "3";
+        item = "Япония, Китай, Финляндия, Украина, Беларусь, Казахстан, Россия";
         tg.MainButton.show();
 }
 });
@@ -52,7 +52,7 @@ btn4.addEventListener("click", function () {
     }
     else {
         tg.MainButton.setText("Вывести страны Северной Америки");
-        item = "4";
+        item = "США, Канада, Мексика";
         tg.MainButton.show();
 }
 });
@@ -63,11 +63,11 @@ btn5.addEventListener("click", function () {
     }
     else {
         tg.MainButton.setText("Вывести страны Южной Америки");
-        item = "5";
+        item = "Бразилия, Аргентина, Перу, Чили";
         tg.MainButton.show();
 }
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(item);
+    tg.sendData(JSON.stringify(item));
 });
