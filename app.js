@@ -69,5 +69,5 @@ btn5.addEventListener("click", function () {
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(item);
+    tg.sendData(JSON.stringify(item));
 });
