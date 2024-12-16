@@ -18,6 +18,13 @@ def menu(message):
     keyboard.add(australia, africa, evrasia, namerika, samerika)
     bot.send_message(message.chat.id, text='Привет, я бот который предоставляет информацию о странах, сначала выбери континент', reply_markup=keyboard)
 
+@bot.message_handler(content_types="web_app_data") #получаем отправленные данные 
+def answer(webAppMes):
+   data = json.loads(webAppMes.web_app_data.data)
+   print(webAppMes.web_app_data.data) #конкретно то что мы передали в бота
+   bot.send_message(webAppMes.chat.id, "Кнопка отреагировала на клик:")
+   bot.send_message(webAppMes.chat.id, data)
+
 @bot.message_handler(content_types=['text'])
 def callback_worker(message):
     if message.text == "Австралия":
